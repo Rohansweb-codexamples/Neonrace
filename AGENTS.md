@@ -19,12 +19,18 @@ but there is no watcher or reload tool, so call `reload_preview` (or refresh the
 
 Each player answers 20 questions in sets of five. While a player is answering, their car on the
 circuit creeps forward by itself (`auto[]` feeding `placeCar()`) — that is the auto-drive animation.
+A correct answer adds 1 to the HUD `score` **and 1 life**; a wrong answer skips that question
+(`qDone` still advances) and earns no life. Everyone starts with 3 lives.
+
 After every 5th question that player's question box is hidden and their drive panel (`#d1` / `#d2`)
-takes over: the car runs to the finish line on its own while the player steers to collect coins
-(panel ◀ LEFT / RIGHT ▶ buttons; ArrowLeft/ArrowRight also work for player 1). Each coin adds 1 to
-that player's HUD score, the `nextDrive` checkpoint advances by 5, and the next five questions load
-when the drive ends. Question progress lives in `qDone` (separate from the HUD `score`), and 20
-questions wins. Both players' panels run this independently.
+takes over: a 3D road (`.road3d` / `.roadGlow` trapezoids via `clip-path`, `#fin1`/`#fin2` at the
+finish depth) runs to the finish line on its own while the player steers (panel ◀ LEFT / RIGHT ▶
+buttons; ArrowLeft/ArrowRight also work for player 1). `placePickup()` maps a pickup's depth `z`
+(1 = horizon, 0 = the car) to top/left/scale, so coins and blocks shrink and drift toward the
+vanishing point. Coins add 1 to `score`; a block costs 1 life, and a block hit with 0 lives ends
+that drive immediately. Question progress lives in `qDone` (separate from the HUD `score`), the
+`nextDrive` checkpoint advances by 5, and the next five questions load when the drive ends. 20
+questions wins. Both players run this independently.
 
 ## Quirks worth knowing
 
