@@ -1,0 +1,23 @@
+# Base44 dev runbook for Neon Rave.
+#
+# The site is a single static index.html (inline CSS + inline JS) plus an audio
+# file, so there is nothing to build and no dependencies to install: nginx serves
+# the repo bind-mounted at its web root. Edits to index.html show up on the next
+# page load — the config and code are live, only the browser needs a refresh
+# (call reload_preview after an edit).
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+      - ./.base44/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: on-failure
+    healthcheck:
+      # Probes the actual page served by nginx, using busybox wget already in the image.
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || { echo 'nginx not serving the site on port 80'; exit 1; }"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s

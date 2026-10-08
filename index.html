@@ -1,16 +1,19 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Neon Rave</title><style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#05000d;color:#fff;font-family:Arial,sans-serif}.page{height:100vh;display:flex;flex-direction:column}header{height:54px;flex:0 0 54px;padding:8px 16px;background:#090014;border-bottom:2px solid #f0f;display:flex;align-items:center;justify-content:space-between}.topBtns{display:flex;gap:6px}.logo{font-size:23px;font-weight:1000;letter-spacing:4px;text-shadow:0 0 10px #0ff,0 0 22px #f0f}button{border:0;border-radius:8px;padding:8px 10px;color:#fff;background:linear-gradient(135deg,#f08,#5230ff);font-weight:900;cursor:pointer}.main{width:min(1400px,100%);margin:auto;padding:5px 8px;flex:1;min-height:0;display:flex;flex-direction:column}.hud{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:8px;align-items:center;flex:0 0 42px}.score{height:42px;padding:6px 10px;background:#110a20;border:1px solid #653cff;border-radius:10px;font-size:13px}.p1{color:#0ff}.p2{color:#f2d}.status{text-align:center;font-size:13px;font-weight:1000}.race{height:27vh;min-height:145px;max-height:245px;position:relative;overflow:hidden;border:2px solid #693cff;border-radius:18px;background:linear-gradient(#080014 0 43%,#18004a 44%,#020207 45%);margin:7px 0;box-shadow:0 0 28px #6c2cff88;flex-shrink:0}.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:37px 31px;opacity:.5}.sun{position:absolute;top:22px;left:50%;width:75px;height:75px;transform:translateX(-50%);border-radius:50%;background:linear-gradient(#fff,#f3c 45%,#f08);box-shadow:0 0 25px #f0b}.horizon{position:absolute;top:44%;left:0;right:0;height:2px;background:#0ff;box-shadow:0 0 15px #0ff}.grid{position:absolute;left:-20%;right:-20%;bottom:-90px;height:65%;transform:perspective(220px) rotateX(62deg);background-image:linear-gradient(#0eff77 2px,transparent 2px),linear-gradient(90deg,#f0d 2px,transparent 2px);background-size:50px 38px;animation:gridmove .45s linear infinite}.track{position:absolute;left:50%;bottom:-5px;width:58%;height:62%;transform:translateX(-50%);clip-path:polygon(36% 0,64% 0,100% 100%,0 100%);background:linear-gradient(90deg,#11121e,#29233d,#11121e);border-left:3px solid #0ff;border-right:3px solid #f2d}.finish{position:absolute;top:44%;left:50%;width:25%;height:9px;transform:translate(-50%,-50%);background:repeating-linear-gradient(90deg,#fff 0 12px,#111 12px 24px);z-index:2}.car{position:absolute;bottom:15px;width:50px;height:25px;border-radius:10px;background:#0ff;z-index:4;transition:left .45s,bottom .45s;box-shadow:0 0 12px #0ff,0 0 25px #0ff;animation:carbob .32s ease-in-out infinite alternate}.car:before{content:"";position:absolute;left:9px;right:9px;top:-9px;height:12px;border-radius:7px;background:inherit}.car2{background:#f2d;box-shadow:0 0 12px #f2d,0 0 25px #f2d;animation-delay:.12s}.label{position:absolute;top:8px;left:12px;color:#0ff;font-size:11px;font-weight:900;letter-spacing:2px}@keyframes gridmove{to{background-position:0 38px,0 0}}@keyframes carbob{to{transform:translateY(-4px)}}.players{display:grid;grid-template-columns:1fr 1fr;gap:7px;}.players.single{grid-template-columns:1fr}.players.single .two{display:none}.players{flex:1;min-height:0}.player{min-height:0;background:linear-gradient(145deg,#0e0920,#080511);border:2px solid #168cff;border-radius:15px;padding:7px;display:grid;grid-template-rows:55px 28px 1fr 28px 18px;gap:5px;box-shadow:inset 0 0 25px #071cff18}.player.two{border-color:#d329ff}.player.two{border-color:#d329ff}.carscreen{position:relative;overflow:hidden;border-radius:10px;background:linear-gradient(#071528,#02040b);border:1px solid #0ff;padding:5px;font-size:10px;font-weight:1000;letter-spacing:1px}.two .carscreen{border-color:#f2d}.dash{position:absolute;left:8px;right:8px;top:27px;height:2px;background:#0ff;box-shadow:0 0 7px #0ff}.two .dash{background:#f2d;box-shadow:0 0 7px #f2d}.miniRoad{position:absolute;left:27%;right:27%;bottom:-20px;height:55px;transform:perspective(80px) rotateX(55deg);border-left:2px solid #0ff;border-right:2px solid #0ff;background:repeating-linear-gradient(90deg,transparent 0 18px,#124fff 19px 20px)}.miniCar{position:absolute;width:43px;height:19px;border-radius:7px;background:#0ff;left:50%;bottom:12px;transform:translateX(-50%);box-shadow:0 0 13px #0ff;animation:carbob .28s ease-in-out infinite alternate}.two .miniCar{background:#f2d;box-shadow:0 0 13px #f2d}.questionLine{display:grid;grid-template-columns:1fr 38px;gap:5px;min-width:0}.question{text-align:center;font-size:17px;font-weight:1000;display:flex;align-items:center;justify-content:center;background:#0b0d1c;border-radius:8px}.timer{display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid #0ff;color:#0ff;font-weight:1000;background:#071323;font-size:15px}.two .timer{border-color:#f2d;color:#f2d}.answers{display:grid;grid-template-columns:1fr 1fr;gap:5px;min-height:0}.answers button{padding:4px;background:linear-gradient(145deg,#182b55,#0c1430);border:1px solid #168cff;font-size:16px;border-radius:9px;box-shadow:inset 0 1px #ffffff22;transition:transform .12s,filter .12s}.answers button:hover{filter:brightness(1.25);transform:translateY(-1px)}.answers button:active{transform:scale(.97)}.two .answers button{border-color:#d329ff;background:linear-gradient(145deg,#3b174d,#171027)}.keyboard{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.keyboard button{padding:4px 2px;background:linear-gradient(145deg,#171a30,#090a16);border:1px solid #0ff;font-size:10px;border-radius:7px;box-shadow:inset 0 1px #ffffff1c}.keyboard button:active{transform:scale(.95)}.two .keyboard button{border-color:#f2d}.feedback{text-align:center;font-size:11px;font-weight:900;min-height:20px;white-space:nowrap;overflow:hidden}.good{color:#43ffad}.bad{color:#ff507d}.modal{display:none;position:fixed;inset:0;background:#020006ee;z-index:50;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.box{background:#120922;border:2px solid #8b55ff;border-radius:18px;padding:20px;width:min(450px,100%)}select{background:#08030d;color:#fff;padding:7px;border:1px solid #7350b0;border-radius:7px}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#05000d;color:#fff;font-family:Arial,sans-serif}.page{height:100vh;display:flex;flex-direction:column}header{height:54px;flex:0 0 54px;padding:8px 16px;background:#090014;border-bottom:2px solid #f0f;display:flex;align-items:center;justify-content:space-between}.topBtns{display:flex;gap:6px}.logo{font-size:23px;font-weight:1000;letter-spacing:4px;text-shadow:0 0 10px #0ff,0 0 22px #f0f}button{border:0;border-radius:8px;padding:8px 10px;color:#fff;background:linear-gradient(135deg,#f08,#5230ff);font-weight:900;cursor:pointer}.main{width:min(1400px,100%);margin:auto;padding:5px 8px;flex:1;min-height:0;display:flex;flex-direction:column}.hud{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:8px;align-items:center;flex:0 0 42px}.score{height:42px;padding:6px 10px;background:#110a20;border:1px solid #653cff;border-radius:10px;font-size:13px}.p1{color:#0ff}.p2{color:#f2d}.status{text-align:center;font-size:13px;font-weight:1000}.race{height:27vh;min-height:145px;max-height:245px;position:relative;overflow:hidden;border:2px solid #693cff;border-radius:18px;background:linear-gradient(#080014 0 43%,#18004a 44%,#020207 45%);margin:7px 0;box-shadow:0 0 28px #6c2cff88;flex-shrink:0}.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:37px 31px;opacity:.5}.sun{position:absolute;top:22px;left:50%;width:75px;height:75px;transform:translateX(-50%);border-radius:50%;background:linear-gradient(#fff,#f3c 45%,#f08);box-shadow:0 0 25px #f0b}.horizon{position:absolute;top:44%;left:0;right:0;height:2px;background:#0ff;box-shadow:0 0 15px #0ff}.grid{position:absolute;left:-20%;right:-20%;bottom:-90px;height:65%;transform:perspective(220px) rotateX(62deg);background-image:linear-gradient(#0eff77 2px,transparent 2px),linear-gradient(90deg,#f0d 2px,transparent 2px);background-size:50px 38px;animation:gridmove .45s linear infinite}.track{position:absolute;left:50%;bottom:-5px;width:58%;height:62%;transform:translateX(-50%);clip-path:polygon(36% 0,64% 0,100% 100%,0 100%);background:linear-gradient(90deg,#11121e,#29233d,#11121e);border-left:3px solid #0ff;border-right:3px solid #f2d}.finish{position:absolute;top:44%;left:50%;width:25%;height:9px;transform:translate(-50%,-50%);background:repeating-linear-gradient(90deg,#fff 0 12px,#111 12px 24px);z-index:2}.car{position:absolute;bottom:15px;width:50px;height:25px;border-radius:10px;background:#0ff;z-index:4;transition:left .45s,bottom .45s;box-shadow:0 0 12px #0ff,0 0 25px #0ff;animation:carbob .32s ease-in-out infinite alternate}.car:before{content:"";position:absolute;left:9px;right:9px;top:-9px;height:12px;border-radius:7px;background:inherit}.car2{background:#f2d;box-shadow:0 0 12px #f2d,0 0 25px #f2d;animation-delay:.12s}.label{position:absolute;top:8px;left:12px;color:#0ff;font-size:11px;font-weight:900;letter-spacing:2px}@keyframes gridmove{to{background-position:0 38px,0 0}}@keyframes carbob{to{transform:translateY(-4px)}}.players{display:grid;grid-template-columns:1fr 1fr;gap:7px;}.players.single{grid-template-columns:1fr}.players.single .two{display:none}.players{flex:1;min-height:0}.player{position:relative;min-height:0;background:linear-gradient(145deg,#0e0920,#080511);border:2px solid #168cff;border-radius:15px;padding:7px;display:grid;grid-template-rows:55px 28px 1fr 28px 18px;gap:5px;box-shadow:inset 0 0 25px #071cff18}.player.two{border-color:#d329ff}.player.two{border-color:#d329ff}.carscreen{position:relative;overflow:hidden;border-radius:10px;background:linear-gradient(#071528,#02040b);border:1px solid #0ff;padding:5px;font-size:10px;font-weight:1000;letter-spacing:1px}.two .carscreen{border-color:#f2d}.dash{position:absolute;left:8px;right:8px;top:27px;height:2px;background:#0ff;box-shadow:0 0 7px #0ff}.two .dash{background:#f2d;box-shadow:0 0 7px #f2d}.miniRoad{position:absolute;left:27%;right:27%;bottom:-20px;height:55px;transform:perspective(80px) rotateX(55deg);border-left:2px solid #0ff;border-right:2px solid #0ff;background:repeating-linear-gradient(90deg,transparent 0 18px,#124fff 19px 20px)}.miniCar{position:absolute;width:43px;height:19px;border-radius:7px;background:#0ff;left:50%;bottom:12px;transform:translateX(-50%);box-shadow:0 0 13px #0ff;animation:carbob .28s ease-in-out infinite alternate}.two .miniCar{background:#f2d;box-shadow:0 0 13px #f2d}.questionLine{display:grid;grid-template-columns:1fr 38px;gap:5px;min-width:0}.question{text-align:center;font-size:17px;font-weight:1000;display:flex;align-items:center;justify-content:center;background:#0b0d1c;border-radius:8px}.timer{display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid #0ff;color:#0ff;font-weight:1000;background:#071323;font-size:15px}.two .timer{border-color:#f2d;color:#f2d}.answers{display:grid;grid-template-columns:1fr 1fr;gap:5px;min-height:0}.answers button{padding:4px;background:linear-gradient(145deg,#182b55,#0c1430);border:1px solid #168cff;font-size:16px;border-radius:9px;box-shadow:inset 0 1px #ffffff22;transition:transform .12s,filter .12s}.answers button:hover{filter:brightness(1.25);transform:translateY(-1px)}.answers button:active{transform:scale(.97)}.two .answers button{border-color:#d329ff;background:linear-gradient(145deg,#3b174d,#171027)}.keyboard{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.keyboard button{padding:4px 2px;background:linear-gradient(145deg,#171a30,#090a16);border:1px solid #0ff;font-size:10px;border-radius:7px;box-shadow:inset 0 1px #ffffff1c}.keyboard button:active{transform:scale(.95)}.two .keyboard button{border-color:#f2d}.feedback{text-align:center;font-size:11px;font-weight:900;min-height:20px;white-space:nowrap;overflow:hidden}.good{color:#43ffad}.bad{color:#ff507d}.modal{display:none;position:fixed;inset:0;background:#020006ee;z-index:50;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.box{background:#120922;border:2px solid #8b55ff;border-radius:18px;padding:20px;width:min(450px,100%)}select{background:#08030d;color:#fff;padding:7px;border:1px solid #7350b0;border-radius:7px}
 @media(max-width:700px){html,body{overflow:hidden}.page{height:100vh}.main{height:calc(100vh - 54px);padding:4px}.hud{grid-template-columns:1fr 1fr;flex-basis:34px}.score{height:34px;padding:4px 7px}.status{grid-column:1/-1;grid-row:1;font-size:10px}.hud .score{grid-row:2}.race{height:22vh;min-height:115px;margin:4px 0}.players{grid-template-columns:1fr 1fr;gap:4px}.players.single{grid-template-columns:1fr}.players.single .two{display:none}.player{padding:4px;gap:3px;grid-template-rows:45px 25px 1fr 48px 17px}.carscreen{font-size:8px}.answers{gap:3px}.answers button{font-size:13px;padding:3px}.keyboard{grid-template-columns:repeat(3,1fr);gap:2px}.keyboard button{font-size:8px;padding:3px}.logo{font-size:16px;letter-spacing:2px}.topBtns button{padding:6px 7px;font-size:9px}}
-.start{display:flex;position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 35%,#30005e,#05000d 65%);align-items:center;justify-content:center;padding:20px}.startBox{width:min(560px,94vw);text-align:center;padding:28px;border:2px solid #0ff;border-radius:22px;background:#090015eF;box-shadow:0 0 50px #f0f8}.startTitle{font-size:clamp(42px,9vw,82px);font-weight:1000;letter-spacing:8px;color:#fff;text-shadow:0 0 12px #0ff,0 0 35px #f0f}.startSub{font-size:15px;color:#c8c8ff;margin:8px 0 22px}.startBtn{font-size:20px;padding:13px 30px;border-radius:12px}.modePick{display:flex;justify-content:center;gap:7px;margin:12px 0}.mode{background:#101020;border:1px solid #555;padding:8px 12px}.mode.active{border-color:#0ff;box-shadow:0 0 12px #0ff55}.version{margin-top:8px;font-size:13px;font-weight:900;letter-spacing:2px;color:#0ff;text-shadow:0 0 8px #0ff}.startMusic{margin-top:12px;font-size:11px;color:#aaa}.musicDot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#0ff;box-shadow:0 0 8px #0ff;margin-right:5px}</style></head><body><audio id="bgMusic" loop preload="auto" src="https://home.rohansweb.co.uk/Neonrace/331music-disco-dancing-energy-603091.mp3"></audio><div class="start" id="start"><div class="startBox"><div class="startTitle">NEON RAVE</div><div class="startSub">NEON RACING • EASY QUESTIONS • 5 LEVELS</div><div class="modePick"><button id="twoMode" class="mode active">2 PLAYERS</button><button id="oneMode" class="mode">SINGLE PLAYER</button></div><div class="version">v 9</div><button class="startBtn" id="startBtn">START RACE</button><div class="startMusic"><span class="musicDot"></span>Neon music starts with the race</div></div></div><div class="page"><header><div class="logo">NEON RAVE</div><div class="topBtns"><button id="musicBtn">MUSIC ON</button><button id="set">SETTINGS</button></div></header><main class="main"><div class="hud"><div class="score"><b class="p1">PLAYER 1</b> <span id="s1">0</span></div><div class="status" id="status">LEVEL 1 • QUESTION 1/20</div><div class="score" style="text-align:right"><b class="p2">PLAYER 2</b> <span id="s2">0</span></div></div><div class="race"><div class="stars"></div><div class="sun"></div><div class="horizon"></div><div class="grid"></div><div class="track"></div><div class="finish"></div><div class="label">NEON RAVE CIRCUIT</div><div id="c1" class="car" style="left:29%"></div><div id="c2" class="car car2" style="left:66%"></div></div><div class="players" id="players">
-<section class="player"><div class="carscreen">CAR SCREEN 01 • PLAYER 1<div class="dash"></div><div class="miniRoad"></div><div class="miniCar"></div></div><div class="questionLine"><div class="question" id="q1"></div><div class="timer" id="t1">10</div></div><div class="answers" id="a1"></div><div class="keyboard" id="k1"><button data-v="0">1</button><button data-v="1">2</button><button data-v="2">3</button><button data-v="3">4</button><button data-v="enter">ENTER</button><button data-v="clear">CLEAR</button><button data-v="drive">DRIVE</button></div><div class="feedback" id="f1"></div></section>
-<section class="player two"><div class="carscreen">CAR SCREEN 02 • PLAYER 2<div class="dash"></div><div class="miniRoad"></div><div class="miniCar"></div></div><div class="questionLine"><div class="question" id="q2"></div><div class="timer" id="t2">10</div></div><div class="answers" id="a2"></div><div class="keyboard" id="k2"><button data-v="0">1</button><button data-v="1">2</button><button data-v="2">3</button><button data-v="3">4</button><button data-v="enter">ENTER</button><button data-v="clear">CLEAR</button><button data-v="drive">DRIVE</button></div><div class="feedback" id="f2"></div></section></div></main></div>
-<div class="modal" id="settings"><div class="box"><h2>NEON RAVE SETTINGS</h2><p>20 questions • 5 levels • 10 second timer per question</p><p>Theme <select id="theme"><option>Neon Rave</option><option>Cyber Space</option><option>Arcade Night</option><option>Neon Nature</option></select></p><button id="close">CLOSE</button></div></div><div class="modal" id="win"><div class="box" style="text-align:center"><h1 id="winner"></h1><p id="winSub"></p><button id="again">RACE AGAIN</button></div></div>
+.start{display:flex;position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 35%,#30005e,#05000d 65%);align-items:center;justify-content:center;padding:20px}.startBox{width:min(560px,94vw);text-align:center;padding:28px;border:2px solid #0ff;border-radius:22px;background:#090015eF;box-shadow:0 0 50px #f0f8}.startTitle{font-size:clamp(42px,9vw,82px);font-weight:1000;letter-spacing:8px;color:#fff;text-shadow:0 0 12px #0ff,0 0 35px #f0f}.startSub{font-size:15px;color:#c8c8ff;margin:8px 0 22px}.startBtn{font-size:20px;padding:13px 30px;border-radius:12px}.modePick{display:flex;justify-content:center;gap:7px;margin:12px 0}.mode{background:#101020;border:1px solid #555;padding:8px 12px}.mode.active{border-color:#0ff;box-shadow:0 0 12px #0ff55}.version{margin-top:8px;font-size:13px;font-weight:900;letter-spacing:2px;color:#0ff;text-shadow:0 0 8px #0ff}.startMusic{margin-top:12px;font-size:11px;color:#aaa}.musicDot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#0ff;box-shadow:0 0 8px #0ff;margin-right:5px}
+.drivePan{display:none;position:absolute;inset:0;z-index:3;border-radius:13px;padding:6px;background:linear-gradient(#061225,#02040b);border:1px solid #0ff;flex-direction:column;gap:4px}.player.driving .drivePan{display:flex}.two .drivePan{border-color:#f2d}.driveHud{display:flex;justify-content:space-between;font-size:11px;font-weight:1000;letter-spacing:1px;color:#0ff}.two .drivePan .driveHud{color:#f2d}.driveLane{position:relative;flex:1;min-height:0;overflow:hidden;border-radius:10px;border:1px solid #124fff;background:radial-gradient(circle at 50% 18%,#241a5e,#04091a 62%)}.horizon3d{position:absolute;left:0;right:0;top:18%;height:2px;background:#0ff;box-shadow:0 0 12px #0ff}.roadGlow{position:absolute;left:0;right:0;top:18%;bottom:0;clip-path:polygon(43% 0,57% 0,97% 100%,3% 100%);background:#0ff;opacity:.5;filter:blur(1px)}.road3d{position:absolute;left:0;right:0;top:18%;bottom:0;clip-path:polygon(44% 0,56% 0,96% 100%,4% 100%);background:linear-gradient(90deg,#0a1130,#182a5c 42%,#182a5c 58%,#0a1130)}.road3d:before{content:"";position:absolute;inset:0;clip-path:polygon(48% 0,52% 0,63% 100%,37% 100%);background:repeating-linear-gradient(0deg,#0fff 0 11px,transparent 11px 32px);opacity:.75;animation:roadmove .6s linear infinite}@keyframes roadmove{to{background-position:0 32px}}.finish3d{position:absolute;height:9px;width:11%;background:repeating-linear-gradient(90deg,#fff 0 8px,#111 8px 16px);border-radius:3px;box-shadow:0 0 12px #fff;transform:translate(-50%,-50%)}.pickup{position:absolute;z-index:1;transform:translate(-50%,-50%)}.coin{width:14px;height:14px;border-radius:50%;background:radial-gradient(#fff,#ffd23f 55%,#f0a000);box-shadow:0 0 8px #ffd23f}.rock{width:26px;height:20px;border-radius:6px;background:linear-gradient(#ff5470,#7a0d20);box-shadow:0 0 10px #ff5470}.driveCar{position:absolute;bottom:5px;left:50%;width:42px;height:19px;border-radius:7px;background:#0ff;z-index:2;box-shadow:0 0 12px #0ff;transform:translateX(-50%);transition:left .07s linear}.two .driveCar{background:#f2d;box-shadow:0 0 12px #f2d}.driveMsg{text-align:center;font-size:10px;font-weight:900;letter-spacing:1px;min-height:13px;color:#c8c8ff;white-space:nowrap;overflow:hidden}.driveBtns{display:grid;grid-template-columns:1fr 1fr;gap:5px}.driveBtns button{padding:6px;font-size:11px}</style></head><body><audio id="bgMusic" loop preload="auto" src="https://home.rohansweb.co.uk/Neonrace/331music-disco-dancing-energy-603091.mp3"></audio><div class="start" id="start"><div class="startBox"><div class="startTitle">NEON RAVE</div><div class="startSub">NEON RACING • EASY QUESTIONS • 5 LEVELS</div><div class="modePick"><button id="twoMode" class="mode active">2 PLAYERS</button><button id="oneMode" class="mode">SINGLE PLAYER</button></div><div class="version">v 11</div><button class="startBtn" id="startBtn">START RACE</button><div class="startMusic"><span class="musicDot"></span>Neon music starts with the race</div></div></div><div class="page"><header><div class="logo">NEON RAVE</div><div class="topBtns"><button id="musicBtn">MUSIC ON</button><button id="set">SETTINGS</button></div></header><main class="main"><div class="hud"><div class="score"><b class="p1">PLAYER 1</b> <span id="s1">0</span> ♥<span id="lv1">3</span></div><div class="status" id="status">LEVEL 1 • QUESTION 1/20</div><div class="score" style="text-align:right"><b class="p2">PLAYER 2</b> <span id="s2">0</span> ♥<span id="lv2">3</span></div></div><div class="race"><div class="stars"></div><div class="sun"></div><div class="horizon"></div><div class="grid"></div><div class="track"></div><div class="finish"></div><div class="label">NEON RAVE CIRCUIT</div><div id="c1" class="car" style="left:29%"></div><div id="c2" class="car car2" style="left:66%"></div></div><div class="players" id="players">
+<section class="player" id="p1"><div class="carscreen">CAR SCREEN 01 • PLAYER 1<div class="dash"></div><div class="miniRoad"></div><div class="miniCar"></div></div><div class="questionLine"><div class="question" id="q1"></div><div class="timer" id="t1">10</div></div><div class="answers" id="a1"></div><div class="keyboard" id="k1"><button data-v="0">1</button><button data-v="1">2</button><button data-v="2">3</button><button data-v="3">4</button><button data-v="enter">ENTER</button><button data-v="clear">CLEAR</button><button data-v="drive">DRIVE</button></div><div class="feedback" id="f1"></div><div class="drivePan" id="d1"><div class="driveHud"><span>COINS <b id="co1">0</b></span><span>FINISH <b id="ds1">100m</b></span></div><div class="driveLane" id="lane1"><div class="horizon3d"></div><div class="roadGlow"></div><div class="road3d"></div><div class="finish3d" id="fin1"></div><div class="driveCar" id="dc1"></div></div><div class="driveMsg" id="dm1">DODGE THE BLOCKS • COLLECT COINS</div><div class="driveBtns"><button data-steer="-1">◀ LEFT</button><button data-steer="1">RIGHT ▶</button></div></div></section>
+<section class="player two" id="p2"><div class="carscreen">CAR SCREEN 02 • PLAYER 2<div class="dash"></div><div class="miniRoad"></div><div class="miniCar"></div></div><div class="questionLine"><div class="question" id="q2"></div><div class="timer" id="t2">10</div></div><div class="answers" id="a2"></div><div class="keyboard" id="k2"><button data-v="0">1</button><button data-v="1">2</button><button data-v="2">3</button><button data-v="3">4</button><button data-v="enter">ENTER</button><button data-v="clear">CLEAR</button><button data-v="drive">DRIVE</button></div><div class="feedback" id="f2"></div><div class="drivePan" id="d2"><div class="driveHud"><span>COINS <b id="co2">0</b></span><span>FINISH <b id="ds2">100m</b></span></div><div class="driveLane" id="lane2"><div class="horizon3d"></div><div class="roadGlow"></div><div class="road3d"></div><div class="finish3d" id="fin2"></div><div class="driveCar" id="dc2"></div></div><div class="driveMsg" id="dm2">DODGE THE BLOCKS • COLLECT COINS</div><div class="driveBtns"><button data-steer="-1">◀ LEFT</button><button data-steer="1">RIGHT ▶</button></div></div></section></div></main></div>
+<div class="modal" id="settings"><div class="box"><h2>NEON RAVE SETTINGS</h2><p>20 questions • 5 levels • 10 second timer per question</p><p>Right answers earn lives • drive after every 5 questions</p><p>Dodge the blocks or lose a life • coins add to your score</p><p>Theme <select id="theme"><option>Neon Rave</option><option>Cyber Space</option><option>Arcade Night</option><option>Neon Nature</option></select></p><button id="close">CLOSE</button></div></div><div class="modal" id="win"><div class="box" style="text-align:center"><h1 id="winner"></h1><p id="winSub"></p><button id="again">RACE AGAIN</button></div></div>
 <script>
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
 let singlePlayer=false, musicOn=true, running=false;
 let score=[0,0], pick=[-1,-1], questions=[null,null], timers=[null,null], time=[10,10];
+let qDone=[0,0], auto=[0,0], mode=["question","question"], nextDrive=[5,5], lives=[3,3];
+let coins=[0,0], driveDist=[100,100], driveX=[50,50], driveTimers=[null,null], driveCoins=[[],[]], autoTimer=null;
 
 const Q=[
  [["2 + 3 = ?",["4","5","6","7"],1],["7 - 2 = ?",["4","5","6","7"],1],["3 + 4 = ?",["6","7","8","9"],1],["8 - 3 = ?",["4","5","6","7"],1]],
@@ -21,6 +24,97 @@ const Q=[
 ];
 
 function music(){const a=$("bgMusic");if(musicOn&&a){a.play().catch(()=>{});}}
+// Car on the circuit: creeps forward by itself while answering, races to the line while driving.
+function placeCar(p){
+ const prog=mode[p]==="drive"?qDone[p]+(1-driveDist[p]/100):qDone[p]+auto[p];
+ const car=$("c"+(p+1));
+ car.style.left=(p===0?29+prog*1.2:66-prog*1.2)+"%";
+ car.style.bottom=(15+prog*1.7)+"px";
+}
+function clearCoins(p){
+ driveCoins[p].forEach(function(o){o.el.remove();});
+ driveCoins[p]=[];
+}
+function steer(p,dir){
+ if(!running||mode[p]!=="drive")return;
+ driveX[p]=Math.max(7,Math.min(93,driveX[p]+dir*9));
+ $("dc"+(p+1)).style.left=driveX[p]+"%";
+}
+// 3D road: z 0 = at the car, 1 = at the horizon. Pickups shrink and slide toward the vanishing point.
+function placePickup(o){
+ const half=6+(1-o.z)*40;
+ o.el.style.top=(94-o.z*76)+"%";
+ o.el.style.left=(50+(o.x-50)*(half/46))+"%";
+ o.el.style.transform="translate(-50%,-50%) scale("+(0.4+(1-o.z)*0.6).toFixed(2)+")";
+}
+function placeFinish(p){
+ const z=Math.min(1,Math.max(0,driveDist[p]/100));
+ const half=6+(1-z)*40;
+ const el=$("fin"+(p+1));
+ el.style.top=(94-z*76)+"%";
+ el.style.width=(half*1.8)+"%";
+ el.style.transform="translate(-50%,-50%) scale("+(0.4+(1-z)*0.6).toFixed(2)+")";
+}
+function spawnPickup(p){
+ const el=document.createElement("div");
+ const rock=Math.random()<0.4;
+ el.className="pickup "+(rock?"rock":"coin");
+ const o={el:el,x:12+Math.random()*76,z:1,rock:rock};
+ $("lane"+(p+1)).appendChild(el);
+ placePickup(o);
+ driveCoins[p].push(o);
+}
+// Every 5 questions the question box hides and the player drives the 3D road: dodge blocks, grab coins.
+function startDrive(p){
+ mode[p]="drive";driveDist[p]=100;driveX[p]=50;coins[p]=0;pick[p]=-1;
+ clearInterval(timers[p]);clearInterval(driveTimers[p]);clearCoins(p);
+ $("co"+(p+1)).textContent="0";$("ds"+(p+1)).textContent="100m";
+ $("dc"+(p+1)).style.left="50%";
+ $("dm"+(p+1)).textContent="DODGE THE BLOCKS • COLLECT COINS";
+ $("p"+(p+1)).classList.add("driving");
+ placeFinish(p);status();
+ driveTimers[p]=setInterval(function(){tickDrive(p);},60);
+}
+function tickDrive(p){
+ if(!running){clearInterval(driveTimers[p]);return;}
+ driveDist[p]-=1.15;
+ if(driveDist[p]<=0){endDrive(p);return;}
+ $("ds"+(p+1)).textContent=Math.max(0,Math.ceil(driveDist[p]))+"m";
+ placeFinish(p);
+ if(Math.random()<0.055)spawnPickup(p);
+ const line=driveCoins[p];
+ for(let i=0;i<line.length;i++){
+  const o=line[i];
+  o.z-=0.013;
+  if(o.z<=0.06&&!o.hit){
+   o.hit=true;
+   if(Math.abs(o.x-driveX[p])<(o.rock?13:11)){
+    o.el.remove();o.dead=true;
+    if(o.rock){
+     if(lives[p]<=0){endDrive(p,"OUT OF LIVES!");return;}
+     lives[p]--;$("lv"+(p+1)).textContent=lives[p];
+     $("dm"+(p+1)).textContent="CRASH! -1 LIFE";
+    }else{
+     coins[p]++;score[p]++;
+     $("co"+(p+1)).textContent=coins[p];$("s"+(p+1)).textContent=score[p];
+     $("dm"+(p+1)).textContent="COIN +1";
+    }
+   }
+  }
+  if(o.z<=0){o.el.remove();o.dead=true;continue;}
+  placePickup(o);
+ }
+ driveCoins[p]=driveCoins[p].filter(function(o){return !o.dead;});
+ placeCar(p);
+}
+function endDrive(p,msg){
+ clearInterval(driveTimers[p]);driveTimers[p]=null;clearCoins(p);
+ mode[p]="question";auto[p]=0;
+ $("p"+(p+1)).classList.remove("driving");
+ $("f"+(p+1)).textContent=msg||"FINISH! NEXT 5 QUESTIONS";
+ placeCar(p);
+ setTimeout(function(){load(p);},700);
+}
 function timer(p){
  clearInterval(timers[p]); time[p]=10; $("t"+(p+1)).textContent="10";
  timers[p]=setInterval(function(){
@@ -30,8 +124,9 @@ function timer(p){
  },1000);
 }
 function load(p){
- if(score[p]>=20){win(p);return;}
- const n=score[p], lv=Math.floor(n/4);
+ if(qDone[p]>=20){win(p);return;}
+ if(qDone[p]>=nextDrive[p]){nextDrive[p]+=5;startDrive(p);return;}
+ const n=qDone[p], lv=Math.floor(n/4);
  questions[p]=Q[lv][n%4]; pick[p]=-1;
  $("q"+(p+1)).textContent=questions[p][0]; $("t"+(p+1)).textContent="10";
  $("f"+(p+1)).textContent="Choose an answer"; $("f"+(p+1)).className="feedback";
@@ -48,37 +143,56 @@ function select(p,i){
  $("a"+(p+1)).querySelectorAll("button").forEach((b,n)=>b.style.outline=n===i?"2px solid white":"");
  $("f"+(p+1)).textContent="PRESS ENTER";
 }
+// Right answer: +1 score and +1 life. Wrong answer: the question is skipped and no life is earned.
 function answer(p){
  if(!running||pick[p]<0)return;
- if(pick[p]===questions[p][2]){
-  clearInterval(timers[p]);score[p]++;
-  $("s"+(p+1)).textContent=score[p];$("f"+(p+1)).textContent="CORRECT";
-  const car=$("c"+(p+1));car.style.bottom=(15+score[p]*1.7)+"px";
-  car.style.left=(p===0?29+score[p]*1.2:66-score[p]*1.2)+"%";
-  setTimeout(()=>load(p),400);
+ const right=pick[p]===questions[p][2];
+ clearInterval(timers[p]);qDone[p]++;auto[p]=0;
+ if(right){
+  score[p]++;lives[p]++;
+  $("s"+(p+1)).textContent=score[p];$("lv"+(p+1)).textContent=lives[p];
+  $("f"+(p+1)).textContent="CORRECT • +1 LIFE";
  }else{
-  pick[p]=-1;$("f"+(p+1)).textContent="WRONG — TRY AGAIN";
+  $("f"+(p+1)).textContent="WRONG • SKIPPED • NO LIFE";
  }
+ placeCar(p);
+ setTimeout(()=>load(p),450);
 }
 function status(){
  if(!running)return;
- $("status").textContent=singlePlayer?"SINGLE PLAYER • QUESTION "+(score[0]+1)+"/20":"P1 "+score[0]+"/20 • P2 "+score[1]+"/20";
+ $("status").textContent=singlePlayer?"SINGLE PLAYER • QUESTION "+(qDone[0]+1)+"/20":"P1 "+qDone[0]+"/20 • P2 "+qDone[1]+"/20";
 }
 function reset(){
- clearInterval(timers[0]);clearInterval(timers[1]);score=[0,0];pick=[-1,-1];
- $("s1").textContent="0";$("s2").textContent="0";
- $("c1").style.left="29%";$("c1").style.bottom="15px";$("c2").style.left="66%";$("c2").style.bottom="15px";
+ clearInterval(timers[0]);clearInterval(timers[1]);clearInterval(driveTimers[0]);clearInterval(driveTimers[1]);clearInterval(autoTimer);
+ score=[0,0];pick=[-1,-1];qDone=[0,0];auto=[0,0];coins=[0,0];lives=[3,3];nextDrive=[5,5];mode=["question","question"];driveDist=[100,100];driveX=[50,50];
+ $("s1").textContent="0";$("s2").textContent="0";$("lv1").textContent="3";$("lv2").textContent="3";
+ [1,2].forEach(function(n){
+  clearCoins(n-1);$("p"+n).classList.remove("driving");
+  $("co"+n).textContent="0";$("dc"+n).style.left="50%";
+  $("dm"+n).textContent="DODGE THE BLOCKS • COLLECT COINS";
+ });
+ placeFinish(0);placeFinish(1);
+ placeCar(0);placeCar(1);
 }
 function start(){
  reset();running=true;$("start").style.display="none";
  $("players").classList.toggle("single",singlePlayer);
  $("s2").parentElement.style.display=singlePlayer?"none":"block";
+ autoTimer=setInterval(function(){
+  if(!running)return;
+  [0,1].forEach(function(p){
+   if(singlePlayer&&p===1)return;
+   if(mode[p]!=="question")return;
+   auto[p]=Math.min(.95,auto[p]+.02);placeCar(p);
+  });
+ },120);
  load(0);if(!singlePlayer)load(1);music();
 }
 function win(p){
- running=false;clearInterval(timers[p]);
+ running=false;clearInterval(timers[p]);clearInterval(autoTimer);
+ [1,2].forEach(function(n){clearInterval(driveTimers[n-1]);clearCoins(n-1);$("p"+n).classList.remove("driving");});
  $("winner").textContent=singlePlayer?"YOU WIN NEON RAVE!":"PLAYER "+(p+1)+" WINS NEON RAVE!";
- $("winSub").textContent="20 questions completed."; $("win").classList.add("show");
+ $("winSub").textContent="20 questions completed • P1 "+score[0]+" • P2 "+score[1]; $("win").classList.add("show");
 }
 function setup(){
  $("startBtn").addEventListener("click",start);
@@ -97,61 +211,18 @@ function setup(){
     else select(p,Number(v));
    });
   });
+  $("d"+n).querySelectorAll("button").forEach(function(b){
+   b.addEventListener("click",function(){steer(n-1,Number(this.dataset.steer));});
+  });
  });
  document.addEventListener("keydown",function(e){
   if(!running)return;
+  if(mode[0]==="drive"){if(e.key==="ArrowLeft")steer(0,-1);if(e.key==="ArrowRight")steer(0,1);return;}
   if(e.key>="1"&&e.key<="4")select(0,Number(e.key)-1);
   if(e.key==="Enter")answer(0);
  });
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",setup);else setup();
 })();
-</script>e html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Neon Rave</title><style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#05000d;color:#fff;font-family:Arial,sans-serif}.page{height:100vh;display:flex;flex-direction:column}header{height:54px;flex:0 0 54px;padding:8px 16px;background:#090014;border-bottom:2px solid #f0f;display:flex;align-items:center;justify-content:space-between}.topBtns{display:flex;gap:6px}.logo{font-size:23px;font-weight:1000;letter-spacing:4px;text-shadow:0 0 10px #0ff,0 0 22px #f0f}button{border:0;border-radius:8px;padding:8px 10px;color:#fff;background:linear-gradient(135deg,#f08,#5230ff);font-weight:900;cursor:pointer}.main{width:min(1400px,100%);margin:auto;padding:5px 8px;flex:1;min-height:0;display:flex;flex-direction:column}.hud{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:8px;align-items:center;flex:0 0 42px}.score{height:42px;padding:6px 10px;background:#110a20;border:1px solid #653cff;border-radius:10px;font-size:13px}.p1{color:#0ff}.p2{color:#f2d}.status{text-align:center;font-size:13px;font-weight:1000}.race{height:27vh;min-height:145px;max-height:245px;position:relative;overflow:hidden;border:2px solid #693cff;border-radius:18px;background:linear-gradient(#080014 0 43%,#18004a 44%,#020207 45%);margin:7px 0;box-shadow:0 0 28px #6c2cff88;flex-shrink:0}.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:37px 31px;opacity:.5}.sun{position:absolute;top:22px;left:50%;width:75px;height:75px;transform:translateX(-50%);border-radius:50%;background:linear-gradient(#fff,#f3c 45%,#f08);box-shadow:0 0 25px #f0b}.horizon{position:absolute;top:44%;left:0;right:0;height:2px;background:#0ff;box-shadow:0 0 15px #0ff}.grid{position:absolute;left:-20%;right:-20%;bottom:-90px;height:65%;transform:perspective(220px) rotateX(62deg);background-image:linear-gradient(#0eff77 2px,transparent 2px),linear-gradient(90deg,#f0d 2px,transparent 2px);background-size:50px 38px;animation:gridmove .45s linear infinite}.track{position:absolute;left:50%;bottom:-5px;width:58%;height:62%;transform:translateX(-50%);clip-path:polygon(36% 0,64% 0,100% 100%,0 100%);background:linear-gradient(90deg,#11121e,#29233d,#11121e);border-left:3px solid #0ff;border-right:3px solid #f2d}.finish{position:absolute;top:44%;left:50%;width:25%;height:9px;transform:translate(-50%,-50%);background:repeating-linear-gradient(90deg,#fff 0 12px,#111 12px 24px);z-index:2}.car{position:absolute;bottom:15px;width:50px;height:25px;border-radius:10px;background:#0ff;z-index:4;transition:left .45s,bottom .45s;box-shadow:0 0 12px #0ff,0 0 25px #0ff;animation:carbob .32s ease-in-out infinite alternate}.car:before{content:"";position:absolute;left:9px;right:9px;top:-9px;height:12px;border-radius:7px;background:inherit}.car2{background:#f2d;box-shadow:0 0 12px #f2d,0 0 25px #f2d;animation-delay:.12s}.label{position:absolute;top:8px;left:12px;color:#0ff;font-size:11px;font-weight:900;letter-spacing:2px}@keyframes gridmove{to{background-position:0 38px,0 0}}@keyframes carbob{to{transform:translateY(-4px)}}.players{display:grid;grid-template-columns:1fr 1fr;gap:7px;}.players.single{grid-template-columns:1fr}.players.single .two{display:none}.players{flex:1;min-height:0}.player{min-height:0;background:linear-gradient(145deg,#0e0920,#080511);border:2px solid #168cff;border-radius:15px;padding:7px;display:grid;grid-template-rows:55px 28px 1fr 28px 18px;gap:5px;box-shadow:inset 0 0 25px #071cff18}.player.two{border-color:#d329ff}.player.two{border-color:#d329ff}.carscreen{position:relative;overflow:hidden;border-radius:10px;background:linear-gradient(#071528,#02040b);border:1px solid #0ff;padding:5px;font-size:10px;font-weight:1000;letter-spacing:1px}.two .carscreen{border-color:#f2d}.dash{position:absolute;left:8px;right:8px;top:27px;height:2px;background:#0ff;box-shadow:0 0 7px #0ff}.two .dash{background:#f2d;box-shadow:0 0 7px #f2d}.miniRoad{position:absolute;left:27%;right:27%;bottom:-20px;height:55px;transform:perspective(80px) rotateX(55deg);border-left:2px solid #0ff;border-right:2px solid #0ff;background:repeating-linear-gradient(90deg,transparent 0 18px,#124fff 19px 20px)}.miniCar{position:absolute;width:43px;height:19px;border-radius:7px;background:#0ff;left:50%;bottom:12px;transform:translateX(-50%);box-shadow:0 0 13px #0ff;animation:carbob .28s ease-in-out infinite alternate}.two .miniCar{background:#f2d;box-shadow:0 0 13px #f2d}.questionLine{display:grid;grid-template-columns:1fr 38px;gap:5px;min-width:0}.question{text-align:center;font-size:17px;font-weight:1000;display:flex;align-items:center;justify-content:center;background:#0b0d1c;border-radius:8px}.timer{display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid #0ff;color:#0ff;font-weight:1000;background:#071323;font-size:15px}.two .timer{border-color:#f2d;color:#f2d}.answers{display:grid;grid-template-columns:1fr 1fr;gap:5px;min-height:0}.answers button{padding:4px;background:linear-gradient(145deg,#182b55,#0c1430);border:1px solid #168cff;font-size:16px;border-radius:9px;box-shadow:inset 0 1px #ffffff22;transition:transform .12s,filter .12s}.answers button:hover{filter:brightness(1.25);transform:translateY(-1px)}.answers button:active{transform:scale(.97)}.two .answers button{border-color:#d329ff;background:linear-gradient(145deg,#3b174d,#171027)}.keyboard{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.keyboard button{padding:4px 2px;background:linear-gradient(145deg,#171a30,#090a16);border:1px solid #0ff;font-size:10px;border-radius:7px;box-shadow:inset 0 1px #ffffff1c}.keyboard button:active{transform:scale(.95)}.two .keyboard button{border-color:#f2d}.feedback{text-align:center;font-size:11px;font-weight:900;min-height:20px;white-space:nowrap;overflow:hidden}.good{color:#43ffad}.bad{color:#ff507d}.modal{display:none;position:fixed;inset:0;background:#020006ee;z-index:50;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.box{background:#120922;border:2px solid #8b55ff;border-radius:18px;padding:20px;width:min(450px,100%)}select{background:#08030d;color:#fff;padding:7px;border:1px solid #7350b0;border-radius:7px}
-@media(max-width:700px){html,body{overflow:hidden}.page{height:100vh}.main{height:calc(100vh - 54px);padding:4px}.hud{grid-template-columns:1fr 1fr;flex-basis:34px}.score{height:34px;padding:4px 7px}.status{grid-column:1/-1;grid-row:1;font-size:10px}.hud .score{grid-row:2}.race{height:22vh;min-height:115px;margin:4px 0}.players{grid-template-columns:1fr 1fr;gap:4px}.players.single{grid-template-columns:1fr}.players.single .two{display:none}.player{padding:4px;gap:3px;grid-template-rows:45px 25px 1fr 48px 17px}.carscreen{font-size:8px}.answers{gap:3px}.answers button{font-size:13px;padding:3px}.keyboard{grid-template-columns:repeat(3,1fr);gap:2px}.keyboard button{font-size:8px;padding:3px}.logo{font-size:16px;letter-spacing:2px}.topBtns button{padding:6px 7px;font-size:9px}}
-.start{display:flex;position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 35%,#30005e,#05000d 65%);align-items:center;justify-content:center;padding:20px}.startBox{width:min(560px,94vw);text-align:center;padding:28px;border:2px solid #0ff;border-radius:22px;background:#090015eF;box-shadow:0 0 50px #f0f8}.startTitle{font-size:clamp(42px,9vw,82px);font-weight:1000;letter-spacing:8px;color:#fff;text-shadow:0 0 12px #0ff,0 0 35px #f0f}.startSub{font-size:15px;color:#c8c8ff;margin:8px 0 22px}.startBtn{font-size:20px;padding:13px 30px;border-radius:12px}.modePick{display:flex;justify-content:center;gap:7px;margin:12px 0}.mode{background:#101020;border:1px solid #555;padding:8px 12px}.mode.active{border-color:#0ff;box-shadow:0 0 12px #0ff55}.version{margin-top:8px;font-size:13px;font-weight:900;letter-spacing:2px;color:#0ff;text-shadow:0 0 8px #0ff}.startMusic{margin-top:12px;font-size:11px;color:#aaa}.musicDot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#0ff;box-shadow:0 0 8px #0ff;margin-right:5px}</style></head><body><audio id="bgMusic" loop preload="auto" src="https://home.rohansweb.co.uk/Neonrace/331music-disco-dancing-energy-603091.mp3"></audio><div class="start" id="start"><div class="startBox"><div class="startTitle">NEON RAVE</div><div class="startSub">NEON RACING • EASY QUESTIONS • 5 LEVELS</div><div class="modePick"><button id="twoMode" class="mode active">2 PLAYERS</button><button id="oneMode" class="mode">SINGLE PLAYER</button></div><div class="version">v 9</div><button class="startBtn" id="startBtn">START RACE</button><div class="startMusic"><span class="musicDot"></span>Neon music starts with the race</div></div></div><div class="page"><header><div class="logo">NEON RAVE</div><div class="topBtns"><button id="musicBtn">MUSIC ON</button><button id="set">SETTINGS</button></div></header><main class="main"><div class="hud"><div class="score"><b class="p1">PLAYER 1</b> <span id="s1">0</span></div><div class="status" id="status">LEVEL 1 • QUESTION 1/20</div><div class="score" style="text-align:right"><b class="p2">PLAYER 2</b> <span id="s2">0</span></div></div><div class="race"><div class="stars"></div><div class="sun"></div><div class="horizon"></div><div class="grid"></div><div class="track"></div><div class="finish"></div><div class="label">NEON RAVE CIRCUIT</div><div id="c1" class="car" style="left:29%"></div><div id="c2" class="car car2" style="left:66%"></div></div><div class="players" id="players">
-<section class="player"><div class="carscreen">CAR SCREEN 01 • PLAYER 1<div class="dash"></div><div class="miniRoad"></div><div class="miniCar"></div></div><div class="questionLine"><div class="question" id="q1"></div><div class="timer" id="t1">10</div></div><div class="answers" id="a1"></div><div class="keyboard" id="k1"><button data-v="0">1</button><button data-v="1">2</button><button data-v="2">3</button><button data-v="3">4</button><button data-v="enter">ENTER</button><button data-v="clear">CLEAR</button><button data-v="drive">DRIVE</button></div><div class="feedback" id="f1"></div></section>
-<section class="player two"><div class="carscreen">CAR SCREEN 02 • PLAYER 2<div class="dash"></div><div class="miniRoad"></div><div class="miniCar"></div></div><div class="questionLine"><div class="question" id="q2"></div><div class="timer" id="t2">10</div></div><div class="answers" id="a2"></div><div class="keyboard" id="k2"><button data-v="0">1</button><button data-v="1">2</button><button data-v="2">3</button><button data-v="3">4</button><button data-v="enter">ENTER</button><button data-v="clear">CLEAR</button><button data-v="drive">DRIVE</button></div><div class="feedback" id="f2"></div></section></div></main></div>
-<div class="modal" id="settings"><div class="box"><h2>NEON RAVE SETTINGS</h2><p>20 questions • 5 levels • 10 second timer per question</p><p>Theme <select id="theme"><option>Neon Rave</option><option>Cyber Space</option><option>Arcade Night</option><option>Neon Nature</option></select></p><button id="close">CLOSE</button></div></div><div class="modal" id="win"><div class="box" style="text-align:center"><h1 id="winner"></h1><p id="winSub"></p><button id="again">RACE AGAIN</button></div></div>
-<script>
-const $=id=>document.getElementById(id);
-let musicOn=true,singlePlayer=false;
-const bgMusic=$("bgMusic");
-bgMusic.volume=.45;
-function startMusic(){if(musicOn){bgMusic.play().catch(()=>{})}}
-function stopMusic(){bgMusic.pause()}
-
-const levels=[
-[4,[["2 + 3 = ?",["4","5","6","7"],1],["7 - 2 = ?",["4","5","6","7"],1],["3 + 4 = ?",["6","7","8","9"],1],["8 - 3 = ?",["4","5","6","7"],1]]],
-[4,[["5 + 4 = ?",["8","9","10","11"],1],["10 - 3 = ?",["6","7","8","9"],1],["3 × 3 = ?",["7","8","9","10"],2],["12 ÷ 3 = ?",["3","4","5","6"],1]]],
-[4,[["8 + 6 = ?",["13","14","15","16"],1],["15 - 6 = ?",["8","9","10","11"],1],["4 × 3 = ?",["10","11","12","13"],2],["16 ÷ 4 = ?",["3","4","5","6"],1]]],
-[4,[["7 × 2 = ?",["12","14","16","18"],1],["18 ÷ 3 = ?",["5","6","7","8"],1],["20 - 7 = ?",["12","13","14","15"],1],["9 + 8 = ?",["16","17","18","19"],1]]],
-[4,[["6 × 4 = ?",["20","22","24","26"],2],["24 ÷ 4 = ?",["5","6","7","8"],1],["17 + 6 = ?",["22","23","24","25"],1],["25 - 9 = ?",["14","15","16","17"],2]]]
-];
-let level=0,score=[0,0],pick=[null,null],questions=[null,null],locked=[false,false],roundNo=0,questionNo=[1,1],timers=[null,null],timeLeft=[10,10],finished=[false,false];
-function makeQuestion(p){
-  const n=Math.min(20,score[p]+1),lv=Math.min(4,Math.floor((n-1)/4));
-  questionNo[p]=n;level=lv;
-  const pool=levels[lv][1];questions[p]=pool[(n-1)%pool.length];
-  pick[p]=null;locked[p]=false;timeLeft[p]=10;
-  $("q"+(p+1)).textContent=questions[p][0];$("t"+(p+1)).textContent="10";
-  $("t"+(p+1)).style.background="";$("f"+(p+1)).textContent=singlePlayer&&p===1?"":"Choose an answer";$("f"+(p+1)).className="feedback";
-  const box=$("a"+(p+1));box.innerHTML="";
-  questions[p][1].forEach((v,i)=>{let b=document.createElement("button");b.textContent=v;b.onclick=()=>choose(p,i);box.appendChild(b)});
-  if(!(singlePlayer&&p===1))startTimer(p);
-}
-function newRound(){roundNo++;makeQuestion(0);if(!singlePlayer)makeQuestion(1);updateStatus() }
-function updateStatus(){
-  if(singlePlayer)$("status").textContent="SINGLE PLAYER • QUESTION "+questionNo[0]+"/20";
-  else $("status").textContent="P1 Q"+questionNo[0]+"/20 • P2 Q"+questionNo[1]+"/20";
-}function finishPlayerQuestion(p){
-  if(!finished[p])finished[p]=true;
-  clearInterval(timers[p]);
-  if(score[p]>=20){
-    $("winner").textContent=singlePlayer?"YOU WIN NEON RAVE!":"PLAYER "+(p+1)+" WINS NEON RAVE!";
-    $("winSub").textContent="20 questions completed!";
-    $("win").classList.add("show");return;
-  }
-  $("f"+(p+1)).textContent="ROUND COMPLETE • WAITING";
-  setTimeout(()=>{finished[p]=false;makeQuestion(p);updateStatus()},450);
-}
+</script>
+</body></html>
