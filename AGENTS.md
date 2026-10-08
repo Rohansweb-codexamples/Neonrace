@@ -15,6 +15,17 @@ curl -s localhost:3000/ | grep -o '<title>Neon Rave</title>'
 (see `.base44/nginx.conf`). Nothing is compiled, so an edit to `index.html` is served immediately —
 but there is no watcher or reload tool, so call `reload_preview` (or refresh the browser) to see it.
 
+## Game flow
+
+Each player answers 20 questions in sets of five. While a player is answering, their car on the
+circuit creeps forward by itself (`auto[]` feeding `placeCar()`) — that is the auto-drive animation.
+After every 5th question that player's question box is hidden and their drive panel (`#d1` / `#d2`)
+takes over: the car runs to the finish line on its own while the player steers to collect coins
+(panel ◀ LEFT / RIGHT ▶ buttons; ArrowLeft/ArrowRight also work for player 1). Each coin adds 1 to
+that player's HUD score, the `nextDrive` checkpoint advances by 5, and the next five questions load
+when the drive ends. Question progress lives in `qDone` (separate from the HUD `score`), and 20
+questions wins. Both players' panels run this independently.
+
 ## Quirks worth knowing
 
 - **`index.html` must stay a single document.** Git history (commits `b7876cd`, `3c5a005`) contains
